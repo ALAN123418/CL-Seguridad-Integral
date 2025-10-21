@@ -1,0 +1,56 @@
+/* FONDO DE LA PAGINA */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0078D7, #00B4D8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+
+#popup-bienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 999;
+}
+
+
+/* BIENVENIDA */
+
+.popup-contenido {
+  background-color: white;
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: scale(0.8);
+  transition: transform 0.4s ease;
+}
+
+#popup-bienvenida.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup-bienvenida.mostrar .popup-contenido {
+  transform: scale(1);
+}
+
+/* SE OCULTA */
+.oculto {
+  display: block; 
+}

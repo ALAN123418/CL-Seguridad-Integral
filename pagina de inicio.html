@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+ <head>
+			<!-- INFORMACION TECNICA DE LA PAGINA -->
+	<meta charset="UTF-8">
+	<meta name="description" content="Página web oficial de CL Seguridad Integral.">
+	<meta name="author" content="Alan Eduardo Garcia Valdez.">
+	<meta name="keywords" content="CL Seguridad Integral, CL, Seguridad, Seguridad privada">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Inicio de sesión</title>
+	<link rel="stylesheet" href="estilos.css"> 
+	
+ </head>
+
+ <body>
+			<!-- MENSAJE PEQUEÑO DE BIENVENIDA -->
+ 
+  <div id="mensaje-bienvenida" class="popup-contenido oculto">
+    Bienvenido a CL Seguridad Integral
+  </div>
+
+			<!-- CONTENIDO DE LA PAGINA -->
+	<!-- INICIO DE SESION -->
+  <div class="contenedor-principal">
+  <!-- FORMULARIO DE INICIO DE SESIÓN -->
+  <div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <form id="form-login">
+      <div class="input-group">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" placeholder="Ingresa tu usuario" required>
+      </div>
+
+      <div class="input-group">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Ingresa tu contraseña" required>
+      </div>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p id="mensaje"></p>
+  </div>
+
+	
+
+
+   <footer class="footer">
+    <p>&copy; 2025 CL Seguridad Integral. Todos los derechos reservados.</p>
+   </footer>
+  </div>
+
+  <script src="funciones.js"></script>
+ </body>
+
+
+
+
+</html>

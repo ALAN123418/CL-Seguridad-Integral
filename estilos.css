@@ -1,0 +1,147 @@
+				/* PAGINA INICIO DE SESION */
+
+
+			/* CUADRO DE BIENVIENIDA */
+
+/* OCULTAR MENSAJE */
+.oculto {
+  display: none;
+}
+
+/* ESTILO DE CUADRO BIENVENIDA */
+.popup-contenido {
+  position: fixed;
+  top: 30px;
+  left: 38%; 
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #0673B8;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* ANIMACION DE ENTRADA */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ANIMACION DE SALIDA */
+.fade-out {
+  animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+				/* CUERPO DE LA PAGINA */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0078D7, #00B4D8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Hace que el body ocupe toda la altura de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+/* Contenedor principal con flexbox vertical */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% de la altura visible */
+  color: inherit;
+}
+
+.login-container {
+  max-width: 500px; 
+  padding: 40px;  
+  font-size: 18px; 
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  font-size: 18px;
+  padding: 14px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  font-size: 18px;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#mensaje {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+
+				/* FOOTER */
+/* El footer se empuja al fondo si el contenido es corto */
+.footer {
+  margin-top: auto;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: none;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
