@@ -48,25 +48,25 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ffffff, #B8B8B8);
+  background: linear-gradient(to bottom, #ffffff, #B8B8B8);
   display: flex;
-  // justify-content: center;
-  align-items: center;
+  justify-content: center;
+  // align-items: center;
   margin: 0;
  }
 
-/* Hace que el body ocupe toda la altura de la ventana */
+/* EMPUJA EL FOOTER */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   
 }
-/* Contenedor principal con flexbox vertical */
+/* CONTENEDOR */
 .contenedor-principal {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 100% de la altura visible */
+  min-height: 100vh; 
   color: inherit;
 }
 
@@ -110,7 +110,7 @@ button[type="submit"] {
   width: 100%;
   font-size: 18px;
   padding: 14px;
-  background-color: #007bff;
+  background-color: #8F1010;
   color: white;
   border: none;
   border-radius: 5px;
@@ -132,7 +132,7 @@ button[type="submit"]:hover {
 
 
 				/* FOOTER */
-/* El footer se empuja al fondo si el contenido es corto */
+/* PIE DE PAGINA */
 .footer {
   margin-top: auto;
   background-color: #1a1a1a;
@@ -144,5 +144,6 @@ button[type="submit"]:hover {
   border-top: none;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 
