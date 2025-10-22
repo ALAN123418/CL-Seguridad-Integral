@@ -49,9 +49,8 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #ffffff, #B8B8B8);
-  display: flex;
   justify-content: center;
-  // align-items: center;
+  align-items: center;
   margin: 0;
  }
 
@@ -146,6 +145,7 @@ button[type="submit"]:hover {
   width: 100%; 	
   min-height: 100px;
 }
+
 
 
 
