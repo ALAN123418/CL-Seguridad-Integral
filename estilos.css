@@ -14,8 +14,8 @@
   top: 30px;
   left: 38%; 
   transform: translateX(-50%);
-  background-color: #8F1010;
-  color: #0673B8;
+  background-color: #ffffff;
+  color: #8F1010;
   padding: 20px 30px;
   border-radius: 10px;
   font-size: 20px;
@@ -120,7 +120,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #6EED7F;
 }
 
 #mensaje {
@@ -145,6 +145,7 @@ button[type="submit"]:hover {
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 	min-height: 100px; 
 }
+
 
 
 
