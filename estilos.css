@@ -48,12 +48,12 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0078D7, #00B4D8);
+  background: linear-gradient(to right, #ffffff, #B8B8B8);
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   margin: 0;
-}
+ }
 
 /* Hace que el body ocupe toda la altura de la ventana */
 html, body {
@@ -144,4 +144,5 @@ button[type="submit"]:hover {
   border-top: none;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
+
 
