@@ -1,5 +1,4 @@
 /* FONDO DE LA PAGINA */
-
 body {
   display: flex;
   flex-direction: column;
@@ -7,13 +6,13 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #ffffff, #B8B8B8);
   margin: 0;
+  overflow-x: hidden;
 }
 
-/* EMPUJA EL FOOTER */
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 /* BIENVENIDA */
@@ -52,39 +51,45 @@ html, body {
   transform: scale(1);
 }
 
-/* SE OCULTA */
 .oculto {
-  display: block; 
+  display: block;
 }
 
-
-
+/* MENÚ DESPLEGABLE */
 .menu-desplegable {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a1a1a;
+  background-color: #cc5500;
   padding: 10px 20px;
+  box-sizing: border-box;
 }
 
 .menu-desplegable ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: flex-start;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
-  width: 100%;
+  gap: 20px;
 }
 
 .menu-desplegable .opcion {
   position: relative;
-  color: white;
+  color: #fbeee6;
   cursor: pointer;
+}
+
+.menu-desplegable .opcion:hover {
+  color: #ffd699;
 }
 
 .menu-desplegable .opcion i {
   margin-right: 8px;
+  font-size: 16px;
+  color: #fbeee6;
 }
 
 .menu-desplegable .usuario-derecha {
@@ -92,18 +97,21 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: #e65c00;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
 }
 
-.menu-desplegable .usuario-derecha i {
-  font-size: 16px;
-  color: white;
+.menu-desplegable .usuario-derecha:hover {
+  background-color: #ff751a;
 }
 
 .menu-desplegable .submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #333;
+  background-color: #4b2e2e;
   display: none;
   min-width: 160px;
   z-index: 1000;
@@ -116,13 +124,13 @@ html, body {
 }
 
 .menu-desplegable .submenu li a {
-  color: white;
+  color: #fbeee6;
   text-decoration: none;
   display: block;
 }
 
 .menu-desplegable .submenu li a:hover {
-  background-color: #444;
+  background-color: #6a3f3f;
 }
 
 .menu-desplegable .opcion:hover .submenu {
@@ -141,16 +149,14 @@ html, body {
   }
 }
 
-
-
-
+/* CONTENIDO PRINCIPAL */
 main {
   flex: 1;
   padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-
-				/* FOOTER */
 /* PIE DE PAGINA */
 .footer {
   margin-top: auto;
@@ -160,11 +166,6 @@ main {
   padding: 20px 10px;
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: none;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  width: 100%; 	
+  width: 100%;
   min-height: 100px;
-}
-
-
-
