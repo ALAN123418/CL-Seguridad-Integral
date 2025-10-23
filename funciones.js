@@ -73,7 +73,5 @@ function actualizarReloj() {
   reloj.textContent = `${formato}`;
 }
 
-// Actualiza cada segundo
 setInterval(actualizarReloj, 1000);
-// Ejecuta al cargar
 window.addEventListener('load', actualizarReloj);
