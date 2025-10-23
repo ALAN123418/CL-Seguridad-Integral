@@ -50,4 +50,30 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("contrasena").value = "";
     }
   });
+
 });
+
+
+/* RELOJ FUNCIONAL */ 
+
+function actualizarReloj() {
+  const reloj = document.getElementById('reloj');
+  const ahora = new Date();
+
+  const opciones = {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  };
+
+  const formato = ahora.toLocaleString('es-MX', opciones);
+  reloj.textContent = `${formato}`;
+}
+
+// Actualiza cada segundo
+setInterval(actualizarReloj, 1000);
+// Ejecuta al cargar
+window.addEventListener('load', actualizarReloj);
