@@ -1,21 +1,32 @@
-/* FONDO DE LA PAGINA */
+/* ======== GENERAL ======== */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #B8B8B8);
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
   overflow-x: hidden;
 }
 
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-/* BIENVENIDA */
+/* ======== RELOJ ======== */
+.reloj {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #5a6bc6;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* ======== BIENVENIDA ======== */
 #popup-bienvenida {
   position: fixed;
   top: 0;
@@ -34,12 +45,13 @@ html, body {
 
 .popup-contenido {
   background-color: white;
-  padding: 30px 50px;
+  padding: 40px 60px;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transform: scale(0.8);
   transition: transform 0.4s ease;
+  max-width: 90%;
 }
 
 #popup-bienvenida.mostrar {
@@ -51,121 +63,204 @@ html, body {
   transform: scale(1);
 }
 
-.oculto {
-  display: block;
-}
-
-/* MENÚ DESPLEGABLE */
-.menu-desplegable {
+/* ======== NAVBAR ======== */
+.navbar {
+  background-color: #222;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #cc5500;
-  padding: 10px 20px;
-  box-sizing: border-box;
+  padding: 12px 30px;
+  position: relative;
+  font-size: 16px;
 }
 
-.menu-desplegable ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 100%;
+.navbar ul {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  gap: 20px;
-}
-
-.menu-desplegable .opcion {
-  position: relative;
-  color: #fbeee6;
-  cursor: pointer;
-}
-
-.menu-desplegable .opcion:hover {
-  color: #ffd699;
-}
-
-.menu-desplegable .opcion i {
-  margin-right: 8px;
-  font-size: 16px;
-  color: #fbeee6;
-}
-
-.menu-desplegable .usuario-derecha {
-  margin-left: auto;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #e65c00;
-  padding: 8px 12px;
-  border-radius: 6px;
+  gap: 25px;
+}
+
+.navbar a {
   color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.menu-desplegable .usuario-derecha:hover {
-  background-color: #ff751a;
+.navbar a:hover,
+.navbar a.activo {
+  background-color: #ffd700;
+  color: #222;
 }
 
-.menu-desplegable .submenu {
+/* ======== SUBMENÚS ======== */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #4b2e2e;
-  display: none;
-  min-width: 160px;
-  z-index: 1000;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+  color: #222;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 5px 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  z-index: 10;
 }
 
-.menu-desplegable .submenu li {
-  padding: 10px;
+.submenu li {
+  margin: 0;
 }
 
-.menu-desplegable .submenu li a {
-  color: #fbeee6;
+.submenu a {
+  padding: 10px 20px;
+  color: #222;
+  font-weight: normal;
+}
+
+.submenu a:hover {
+  background-color: #ffd700;
+  color: #222;
+}
+
+.dropdown:hover .submenu {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Submenú del usuario alineado a la derecha */
+.submenu-derecha {
+  right: 0;
+  left: auto;
+}
+
+/* ======== MENÚ USUARIO ======== */
+.menu-derecha {
+  margin-left: auto;
+}
+
+.usuario {
+  background-color: #444;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* ======== LOGIN ======== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5a6bc6, #7aa0ff);
+}
+
+.login-box {
+  background-color: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 14px;
+}
+
+.login-box input:focus {
+  border-color: #5a6bc6;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5a6bc6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #3f4ca1;
+}
+
+.login-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-footer a {
+  color: #5a6bc6;
   text-decoration: none;
-  display: block;
 }
 
-.menu-desplegable .submenu li a:hover {
-  background-color: #6a3f3f;
+.login-footer a:hover {
+  text-decoration: underline;
 }
 
-.menu-desplegable .opcion:hover .submenu {
-  display: block;
-  animation: fadeInDown 0.3s ease-in-out;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* CONTENIDO PRINCIPAL */
-main {
-  flex: 1;
-  padding: 20px;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* PIE DE PAGINA */
+/* ======== FOOTER ======== */
 .footer {
-  margin-top: auto;
   background-color: #1a1a1a;
   color: #f0f0f0;
   text-align: center;
-  padding: 20px 10px;
+  padding: 25px 20px;
   font-size: 14px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
-  min-height: 100px;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .login-box {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .reloj {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
