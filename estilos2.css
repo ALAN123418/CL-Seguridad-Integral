@@ -8,6 +8,12 @@ body {
   margin: 0;
  }
 
+/* EMPUJA EL FOOTER */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; 
+}
 
 /* BIENVENIDA */
 #popup-bienvenida {
@@ -125,3 +131,23 @@ body {
     transform: translateY(0);
   }
 }
+
+
+				/* FOOTER */
+/* PIE DE PAGINA */
+.footer {
+  margin-top: auto;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: none;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%; 	
+  min-height: 100px;
+}
+
+
+
