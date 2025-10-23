@@ -48,7 +48,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #6EED7F;
+  background-color: #8F1010;
   color: white;
   padding: 8px 12px;
   border-radius: 6px;
@@ -160,6 +160,7 @@ button[type="submit"]:hover {
   width: 100%; 	
   min-height: 100px;
 }
+
 
 
 
