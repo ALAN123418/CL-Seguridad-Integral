@@ -44,6 +44,21 @@
   100% { opacity: 0; transform: translateY(-10px); }
 }
 
+.reloj {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #004080;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+
 				/* CUERPO DE LA PAGINA */
 
 body {
@@ -145,6 +160,7 @@ button[type="submit"]:hover {
   width: 100%; 	
   min-height: 100px;
 }
+
 
 
 
