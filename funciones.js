@@ -54,12 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* RELOJ FUNCIONAL */ 
+/* RELOJ FUNCIONAL */
 
 function actualizarReloj() {
   const reloj = document.getElementById('reloj');
-  const ahora = new Date();
+  if (!reloj) return;
 
+  const ahora = new Date();
   const opciones = {
     hour: '2-digit',
     minute: '2-digit',
@@ -75,3 +76,4 @@ function actualizarReloj() {
 
 setInterval(actualizarReloj, 1000);
 window.addEventListener('load', actualizarReloj);
+
