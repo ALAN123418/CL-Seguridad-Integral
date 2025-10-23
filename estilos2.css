@@ -1,12 +1,13 @@
 /* FONDO DE LA PAGINA */
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #ffffff, #B8B8B8);
-  justify-content: center;
-  align-items: center;
   margin: 0;
- }
+}
 
 /* EMPUJA EL FOOTER */
 html, body {
@@ -88,6 +89,14 @@ html, body {
 
 .menu-desplegable .usuario-derecha {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-desplegable .usuario-derecha i {
+  font-size: 16px;
+  color: white;
 }
 
 .menu-desplegable .submenu {
@@ -130,6 +139,14 @@ html, body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+
+main {
+  flex: 1;
+  padding: 20px;
 }
 
 
