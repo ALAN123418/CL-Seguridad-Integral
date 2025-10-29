@@ -1,15 +1,18 @@
 /* ======== GENERAL ======== */
-body {
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f6f8;
   color: #333;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-html, body {
-  height: 100%;
+main {
+  flex: 1;
 }
 
 /* ======== RELOJ ======== */
@@ -103,6 +106,8 @@ html, body {
 }
 
 .submenu {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 100%;
   left: 0;
@@ -149,6 +154,8 @@ html, body {
 /* ======== MENÚ USUARIO ======== */
 .menu-derecha {
   margin-left: auto;
+  display: flex;
+  gap: 20px;
 }
 
 .usuario {
