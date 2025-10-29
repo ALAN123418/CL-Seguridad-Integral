@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
+  form.reset(); // ✅ Vacía los campos al cargar la página
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuarioCorrecto = "admin";
     const contraseñaCorrecta = "12345";
 
-    // Limpia clases anteriores
     mensaje.classList.remove("exito", "error");
 
     if (usuario === usuarioCorrecto && contraseña === contraseñaCorrecta) {
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("usuarioActivo", usuario);
 
       setTimeout(() => {
-        window.location.href = "pagina principal.html";
+        window.location.href = "paginaprincipal.html";
       }, 1500);
     } else {
       mensaje.classList.add("error");
@@ -80,4 +81,4 @@ function actualizarReloj() {
 }
 
 setInterval(actualizarReloj, 1000);
-window.addEventListener('load', actualizarReloj);
+window.addEventListener('load', 
