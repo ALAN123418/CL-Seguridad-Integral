@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
-  form.reset(); // ✅ Vacía los campos al cargar la página
+  form.reset();
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -82,3 +82,4 @@ function actualizarReloj() {
 
 setInterval(actualizarReloj, 1000);
 window.addEventListener('load', 
+
