@@ -1,5 +1,12 @@
 /* ========== PAGINA INICIO DE SESION ========== */
 
+/* ======= NORMALIZACIÓN GLOBAL ======= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ======= MENSAJE DE BIENVENIDA ======= */
 .oculto {
   display: none;
@@ -8,8 +15,7 @@
 .popup-contenido {
   position: fixed;
   top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   background-color: #ffffff;
   color: #8F1010;
   padding: 20px 30px;
@@ -20,10 +26,15 @@
   z-index: 1000;
   opacity: 0;
   animation: fadeIn 1s forwards;
-  max-width: 90%;
+  max-width: 400px;
+  width: 90%;
+  left: 0;
+  right: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Animaciones */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-10px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -61,6 +72,7 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #ffffff, #B8B8B8);
+  overflow-x: hidden;
 }
 
 .contenedor-principal {
@@ -162,6 +174,7 @@ button[type="submit"]:hover {
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
   min-height: 100px;
+  overflow-x: hidden;
 }
 
 /* ======= RESPONSIVE ======= */
@@ -186,5 +199,3 @@ button[type="submit"]:hover {
     font-size: 16px;
     padding: 15px 20px;
   }
-}
-
