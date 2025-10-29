@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("usuarioActivo", usuario);
 
       setTimeout(() => {
-        window.location.href = "paginaprincipal.html";
+        window.location.href = "pagina principal.html";
       }, 1500);
     } else {
       mensaje.classList.add("error");
@@ -78,4 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarReloj(); // Inicializa al cargar
   setInterval(actualizarReloj, 1000);
 });
+
 
