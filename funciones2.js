@@ -1,13 +1,29 @@
 window.onload = function () {
-  const popup = document.getElementById("popup-bienvenida");
+  // Verificar si el usuario está autenticado
+  if (!sessionStorage.getItem("usuarioActivo")) {
+    window.location.href = "index.html";
+    return;
+  }
 
+  // Mostrar el popup de bienvenida
+  const popup = document.getElementById("popup-bienvenida");
   if (popup) {
-    // Mostrar el popup
+    popup.classList.remove("oculto");
     popup.classList.add("mostrar");
 
-    // Ocultarlo automáticamente después de 3.5 segundos
     setTimeout(() => {
       popup.classList.remove("mostrar");
+      popup.classList.add("oculto");
     }, 3500);
+  }
+
+  // Cerrar sesión
+  const botonCerrar = document.getElementById("cerrar-sesion");
+  if (botonCerrar) {
+    botonCerrar.addEventListener("click", (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem("usuarioActivo");
+      window.location.href = "index.html";
+    });
   }
 };
