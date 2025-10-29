@@ -1,37 +1,32 @@
-// PAGINA DE INICIO DE SESION/BIENVENIDA
-
-
-// MENSAJE DE BIENVENIDA 
+// MENSAJE DE BIENVENIDA
 window.addEventListener('DOMContentLoaded', () => {
   const mensaje = document.getElementById('mensaje-bienvenida');
 
-  // ANIMACION DESDE CSS
-  mensaje.classList.remove('oculto');
+  if (mensaje) {
+    mensaje.classList.remove('oculto');
 
-  // ESPERA
-  setTimeout(() => {
-    mensaje.classList.add('fade-out');
-  }, 3000);
+    setTimeout(() => {
+      mensaje.classList.add('fade-out');
+    }, 3000);
 
-  // TIEMPO DE PRESENTACION
-  mensaje.addEventListener('animationend', (e) => {
-    if (e.animationName === 'fadeOut') {
-      mensaje.style.display = 'none';
-    }
-  });
+    mensaje.addEventListener('animationend', (e) => {
+      if (e.animationName === 'fadeOut') {
+        mensaje.style.display = 'none';
+      }
+    });
+  }
 });
 
-// INICIO DE SESION
-
+// INICIO DE SESIÓN
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
-  form.addEventListener("submit", function(event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const usuario = document.getElementById("usuario").value;
-    const contraseña = document.getElementById("contrasena").value;
+    const usuario = document.getElementById("usuario").value.trim();
+    const contraseña = document.getElementById("contrasena").value.trim();
 
     const usuarioCorrecto = "admin";
     const contraseñaCorrecta = "12345";
@@ -40,22 +35,29 @@ document.addEventListener("DOMContentLoaded", () => {
       mensaje.style.color = "green";
       mensaje.textContent = "Inicio de sesión exitoso";
 
+      // Guardar sesión si lo necesitas
+      sessionStorage.setItem("usuarioActivo", usuario);
+
       setTimeout(() => {
         window.location.href = "pagina principal.html";
       }, 1500);
     } else {
       mensaje.style.color = "red";
       mensaje.textContent = "Usuario o contraseña incorrectos";
-      document.getElementById("usuario").value = "";
-      document.getElementById("contrasena").value = "";
+      form.reset();
     }
   });
 
+  // Limpia los campos si se regresa con el botón "Atrás"
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.navigation.type === 2) {
+      form.reset();
+      mensaje.textContent = "";
+    }
+  });
 });
 
-
 /* RELOJ FUNCIONAL */
-
 function actualizarReloj() {
   const reloj = document.getElementById('reloj');
   if (!reloj) return;
@@ -75,5 +77,4 @@ function actualizarReloj() {
 }
 
 setInterval(actualizarReloj, 1000);
-window.addEventListener('load', actualizarReloj);
-
+window.addEventListener('load', 
