@@ -1,4 +1,4 @@
-// MENSAJE DE BIENVENIDA
+// ========== MENSAJE DE BIENVENIDA ==========
 window.addEventListener('DOMContentLoaded', () => {
   const mensaje = document.getElementById('mensaje-bienvenida');
 
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// INICIO DE SESIÓN
+// ========== INICIO DE SESIÓN ==========
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
@@ -31,18 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuarioCorrecto = "admin";
     const contraseñaCorrecta = "12345";
 
+    // Limpia clases anteriores
+    mensaje.classList.remove("exito", "error");
+
     if (usuario === usuarioCorrecto && contraseña === contraseñaCorrecta) {
-      mensaje.style.color = "green";
+      mensaje.classList.add("exito");
       mensaje.textContent = "Inicio de sesión exitoso";
 
-      // Guardar sesión si lo necesitas
       sessionStorage.setItem("usuarioActivo", usuario);
 
       setTimeout(() => {
         window.location.href = "pagina principal.html";
       }, 1500);
     } else {
-      mensaje.style.color = "red";
+      mensaje.classList.add("error");
       mensaje.textContent = "Usuario o contraseña incorrectos";
       form.reset();
     }
@@ -53,11 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.persisted || performance.navigation.type === 2) {
       form.reset();
       mensaje.textContent = "";
+      mensaje.classList.remove("exito", "error");
     }
   });
 });
 
-/* RELOJ FUNCIONAL */
+// ========== RELOJ FUNCIONAL ==========
 function actualizarReloj() {
   const reloj = document.getElementById('reloj');
   if (!reloj) return;
@@ -77,4 +80,4 @@ function actualizarReloj() {
 }
 
 setInterval(actualizarReloj, 1000);
-window.addEventListener('load', 
+window.addEventListener('load', actualizarReloj);
