@@ -1,18 +1,14 @@
-				/* PAGINA INICIO DE SESION */
+/* ========== PAGINA INICIO DE SESION ========== */
 
-
-			/* CUADRO DE BIENVIENIDA */
-
-/* OCULTAR MENSAJE */
+/* ======= MENSAJE DE BIENVENIDA ======= */
 .oculto {
   display: none;
 }
 
-/* ESTILO DE CUADRO BIENVENIDA */
 .popup-contenido {
   position: fixed;
   top: 30px;
-  left: 38%; 
+  left: 50%;
   transform: translateX(-50%);
   background-color: #ffffff;
   color: #8F1010;
@@ -28,22 +24,22 @@
   text-align: center;
 }
 
-/* ANIMACION DE ENTRADA */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ANIMACION DE SALIDA */
 .fade-out {
   animation: fadeOut 1.5s ease forwards;
 }
 
 @keyframes fadeOut {
   0% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(-5px); }
   100% { opacity: 0; transform: translateY(-10px); }
 }
 
+/* ======= RELOJ ======= */
 .reloj {
   position: fixed;
   top: 20px;
@@ -58,39 +54,29 @@
   z-index: 1000;
 }
 
-
-				/* CUERPO DE LA PAGINA */
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #B8B8B8);
-  justify-content: center;
-  align-items: center;
-  margin: 0;
- }
-
-/* EMPUJA EL FOOTER */
+/* ======= CUERPO Y CONTENEDOR ======= */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #B8B8B8);
 }
-/* CONTENEDOR */
+
 .contenedor-principal {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
   color: inherit;
 }
 
+/* ======= FORMULARIO DE LOGIN ======= */
 .login-container {
-  max-width: 500px; 
-  padding: 40px;  
-  font-size: 18px; 
+  max-width: 500px;
+  padding: 40px;
+  font-size: 18px;
   margin: 40px auto;
   background-color: white;
-  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -118,8 +104,18 @@ html, body {
 .input-group input {
   font-size: 18px;
   padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
 }
 
+.input-group input:focus,
+button:focus {
+  outline: 2px solid #8F1010;
+  outline-offset: 2px;
+}
+
+/* ======= BOTÓN ======= */
 button[type="submit"] {
   width: 100%;
   font-size: 18px;
@@ -137,16 +133,24 @@ button[type="submit"]:hover {
   background-color: #6EED7F;
 }
 
+/* ======= MENSAJE DE ESTADO ======= */
 #mensaje {
   text-align: center;
   margin-top: 15px;
   font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
+#mensaje.exito {
+  color: #2e7d32;
+}
 
+#mensaje.error {
+  color: #c62828;
+}
 
-				/* FOOTER */
-/* PIE DE PAGINA */
+/* ======= FOOTER ======= */
 .footer {
   margin-top: auto;
   background-color: #1a1a1a;
@@ -155,21 +159,32 @@ button[type="submit"]:hover {
   padding: 20px 10px;
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: none;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  width: 100%; 	
+  width: 100%;
   min-height: 100px;
 }
 
+/* ======= RESPONSIVE ======= */
+@media (max-width: 600px) {
+  .login-container {
+    margin: 20px;
+    padding: 20px;
+    font-size: 16px;
+  }
 
+  .input-group input {
+    font-size: 16px;
+    padding: 12px;
+  }
 
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 12px;
+  }
 
-
-
-
-
-
-
-
-
+  .popup-contenido {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+}
 
