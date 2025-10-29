@@ -1,3 +1,7 @@
+if (sessionStorage.getItem("usuarioActivo")) {
+  window.location.href = "pagina principal.html";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // ========== MENSAJE DE BIENVENIDA ==========
   const mensajeBienvenida = document.getElementById('mensaje-bienvenida');
@@ -78,5 +82,3 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarReloj(); // Inicializa al cargar
   setInterval(actualizarReloj, 1000);
 });
-
-
