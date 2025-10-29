@@ -81,5 +81,6 @@ function actualizarReloj() {
 }
 
 setInterval(actualizarReloj, 1000);
-window.addEventListener('load', 
+window.addEventListener('load', actualizarReloj);
+
 
