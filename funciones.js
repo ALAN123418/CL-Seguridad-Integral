@@ -1,28 +1,25 @@
-// ========== MENSAJE DE BIENVENIDA ==========
-window.addEventListener('DOMContentLoaded', () => {
-  const mensaje = document.getElementById('mensaje-bienvenida');
-
-  if (mensaje) {
-    mensaje.classList.remove('oculto');
+document.addEventListener("DOMContentLoaded", () => {
+  // ========== MENSAJE DE BIENVENIDA ==========
+  const mensajeBienvenida = document.getElementById('mensaje-bienvenida');
+  if (mensajeBienvenida) {
+    mensajeBienvenida.classList.remove('oculto');
 
     setTimeout(() => {
-      mensaje.classList.add('fade-out');
+      mensajeBienvenida.classList.add('fade-out');
     }, 3000);
 
-    mensaje.addEventListener('animationend', (e) => {
+    mensajeBienvenida.addEventListener('animationend', (e) => {
       if (e.animationName === 'fadeOut') {
-        mensaje.style.display = 'none';
+        mensajeBienvenida.style.display = 'none';
       }
     });
   }
-});
 
-// ========== INICIO DE SESIÓN ==========
-document.addEventListener("DOMContentLoaded", () => {
+  // ========== INICIO DE SESIÓN ==========
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
-  form.reset();
+  form.reset(); // Limpia campos al cargar
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Limpia los campos si se regresa con el botón "Atrás"
   window.addEventListener("pageshow", function (event) {
     if (event.persisted || performance.navigation.type === 2) {
       form.reset();
@@ -59,28 +55,27 @@ document.addEventListener("DOMContentLoaded", () => {
       mensaje.classList.remove("exito", "error");
     }
   });
+
+  // ========== RELOJ FUNCIONAL ==========
+  function actualizarReloj() {
+    const reloj = document.getElementById('reloj');
+    if (!reloj) return;
+
+    const ahora = new Date();
+    const opciones = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    };
+
+    const formato = ahora.toLocaleString('es-MX', opciones);
+    reloj.textContent = `${formato}`;
+  }
+
+  actualizarReloj(); // Inicializa al cargar
+  setInterval(actualizarReloj, 1000);
 });
-
-// ========== RELOJ FUNCIONAL ==========
-function actualizarReloj() {
-  const reloj = document.getElementById('reloj');
-  if (!reloj) return;
-
-  const ahora = new Date();
-  const opciones = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric'
-  };
-
-  const formato = ahora.toLocaleString('es-MX', opciones);
-  reloj.textContent = `${formato}`;
-}
-
-setInterval(actualizarReloj, 1000);
-window.addEventListener('load', actualizarReloj);
-
 
