@@ -3,22 +3,6 @@ if (sessionStorage.getItem("usuarioActivo")) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ========== MENSAJE DE BIENVENIDA ==========
-  const mensajeBienvenida = document.getElementById('mensaje-bienvenida');
-  if (mensajeBienvenida) {
-    mensajeBienvenida.classList.remove('oculto');
-
-    setTimeout(() => {
-      mensajeBienvenida.classList.add('fade-out');
-    }, 3000);
-
-    mensajeBienvenida.addEventListener('animationend', (e) => {
-      if (e.animationName === 'fadeOut') {
-        mensajeBienvenida.style.display = 'none';
-      }
-    });
-  }
-
   // ========== INICIO DE SESIÓN ==========
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
@@ -41,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mensaje.textContent = "Inicio de sesión exitoso";
 
       sessionStorage.setItem("usuarioActivo", usuario);
+      sessionStorage.setItem("mostrarBienvenida", "true"); // Bandera para mostrar bienvenida
 
       setTimeout(() => {
         window.location.href = "pagina principal.html";
