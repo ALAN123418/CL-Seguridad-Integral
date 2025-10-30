@@ -1,13 +1,21 @@
-if (sessionStorage.getItem("usuarioActivo")) {
-  window.location.href = "pagina principal.html";
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+  // ========== REDIRECCIÓN SI YA HAY SESIÓN ==========
+  if (sessionStorage.getItem("usuarioActivo")) {
+    window.location.href = "pagina principal.html";
+    return;
+  }
+
   // ========== INICIO DE SESIÓN ==========
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
   form.reset(); // Limpia campos al cargar
+
+  const usuariosValidos = [
+    { nombre: "Danna Lopez", contraseña: "Psiconeuroinmunoendocrinologia" },
+    { nombre: "Alan Garcia", contraseña: "AlanAdmin" },
+    { nombre: "Kally Trujillo", contraseña: "seguridadCL" },
+  ];
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -15,17 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuario = document.getElementById("usuario").value.trim();
     const contraseña = document.getElementById("contrasena").value.trim();
 
-    const usuarioCorrecto = "admin";
-    const contraseñaCorrecta = "12345";
-
     mensaje.classList.remove("exito", "error");
 
-    if (usuario === usuarioCorrecto && contraseña === contraseñaCorrecta) {
+    const usuarioEncontrado = usuariosValidos.find(
+      u => u.nombre === usuario && u.contraseña === contraseña
+    );
+
+    if (usuarioEncontrado) {
       mensaje.classList.add("exito");
       mensaje.textContent = "Inicio de sesión exitoso";
 
       sessionStorage.setItem("usuarioActivo", usuario);
-      sessionStorage.setItem("mostrarBienvenida", "true"); // Bandera para mostrar bienvenida
+      sessionStorage.setItem("mostrarBienvenida", "true");
 
       setTimeout(() => {
         window.location.href = "pagina principal.html";
@@ -64,6 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reloj.textContent = `${formato}`;
   }
 
-  actualizarReloj(); // Inicializa al cargar
+  actualizarReloj();
   setInterval(actualizarReloj, 1000);
 });
