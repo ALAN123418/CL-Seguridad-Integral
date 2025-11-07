@@ -1,12 +1,5 @@
 /* ========== PAGINA INICIO DE SESION ========== */
 
-/* ======= NORMALIZACIÓN GLOBAL ======= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* ======= RELOJ ======= */
 .reloj {
   position: fixed;
@@ -40,7 +33,7 @@ html, body {
 }
 
 /* ======= FORMULARIO DE LOGIN ======= */
-.login-container {
+.contenedor-formulario {
   max-width: 500px;
   padding: 40px;
   font-size: 18px;
@@ -51,10 +44,11 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-container h2 {
+.contenedor-formulario h2 { /*=== Titulo del formulario ===*/
   text-align: center;
   margin-bottom: 20px;
   color: #1a1a1a;
+  border-bottom: 1px solid silver;
 }
 
 .input-group {
@@ -155,4 +149,5 @@ button[type="submit"]:hover {
   .popup-contenido {
     font-size: 16px;
     padding: 15px 20px;
+
   }
