@@ -3,6 +3,7 @@
 <!-- EL SIGUIENTE CODIGO ES PROPIEDAD DE LA MARCA LIBERTY MINDSET, QUEDA ESTRICTAMENTE PROHIBIDO EL PLAGIO DE ESTA OBRA. -->
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Página web oficial de CL Seguridad Integral.">
   <meta name="author" content="Alan Eduardo Garcia Valdez.">
   <meta name="keywords" content="CL Seguridad Integral, CL, Seguridad, Seguridad privada">
@@ -13,22 +14,23 @@
 </head>
 
 <body>
-  <!-- CONTENIDO DE LA PAGINA -->
+  <!-- FORMULARIO PARA INICIO DE SESION -->
     <div class="contenedor-principal">
-    <div class="login-container">
+    <div class="contenedor-formulario">
       <h2>Iniciar sesión</h2>
       <form id="form-login">
-        <div class="input-group">
+        <div class="usuario">
           <label for="usuario">Usuario:</label>
           <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
         </div>
-
-        <div class="input-group">
+        <div class="contraseña">
           <label for="contrasena">Contraseña:</label>
           <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
         </div>
-
-        <button type="submit">Entrar</button>
+        <div class="recordar">¿Has olvidado tu contraseña?</div>
+        <button type="submit" value="Iniciar">Entrar</button>
+        <div class="registrar"> Quiero hacer el <a href="#">registro<a/>
+        </div>
       </form>
 
       <p id="mensaje"></p>
@@ -43,6 +45,7 @@
   <script src="funciones.js"></script>
 </body>
 </html>
+
 
 
 
