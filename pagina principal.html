@@ -1,13 +1,14 @@
 <!DOCTYPE html> 
 <html lang="es">
-<head>
+<!-- EL SIGUIENTE CODIGO ES PROPIEDAD DE LA MARCA LIBERTY MINDSET, QUEDA ESTRICTAMENTE PROHIBIDO EL PLAGIO DE ESTA OBRA. -->
+  <head>
   <meta charset="UTF-8">
   <meta name="description" content="Página web oficial de CL Seguridad Integral.">
   <meta name="author" content="Alan Eduardo Garcia Valdez.">
   <meta name="keywords" content="CL Seguridad Integral, CL, Seguridad, Seguridad privada">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Área de trabajo</title>
-  <link rel="icon" href="logo.jpg" type="image/jpg">
+  <link rel="icon" href="LogoCLSEGURIDAD.jpg" type="image/jpg">
   <link rel="stylesheet" href="estilos2.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -22,37 +23,19 @@
   </div>
 
   <!-- CONTENIDO DE LA PAGINA -->
-  <main>
+    <main>
     <nav class="navbar" role="navigation" aria-label="Menú principal">
       <ul class="menu-izquierda">
-        <li class="dropdown">
-          <a href="#">Personal</a>
-          <ul class="submenu">
-            <li><a href="bajasactivos.html">Bajas y activos</a></li>
-            <li><a href="expedientes.html">Expedientes</a></li>
-            <li><a href="Empleados.html">Empleados</a></li>
-            <li><a href="incidencias.html">Incidencias</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Asistencia</a>
-          <ul class="submenu">
-            <li><a href="controlfaltas.html">Control de faltas</a></li>
-            <li><a href="asistencia.html">Gestión de asistencia</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Uniformes</a>
-          <ul class="submenu">
-            <li><a href="inventario.html">Inventario</a></li>
-            <li><a href="requerimentos.html">Requerimentos</a></li>
-          </ul>
-        </li>
+        <li><a href="Personal.html">Personal</a></li>
+        <li><a href="Asistencia.html">Asistencia</a></li>
+        <li><a href="Uniformes.html">Uniformes</a></li>
       </ul>
 
       <ul class="menu-derecha">
         <li class="dropdown">
-          <a href="#" class="usuario"><i class="fas fa-user"></i> Usuario</a>
+          <a href="#" class="usuario">
+            <i class="fas fa-user"></i> <span id="nombre-usuario">Usuario</span> <i class="fas fa-caret-down"></i>
+          </a>
           <ul class="submenu submenu-derecha">
             <li><a href="usuario.html">Editar perfil</a></li>
             <li><a href="#" id="cerrar-sesion">Cerrar sesión</a></li>
@@ -60,6 +43,9 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Saludo personalizado -->
+    <div id="saludo-usuario" class="saludo"></div>
   </main>
 
   <footer class="footer">
