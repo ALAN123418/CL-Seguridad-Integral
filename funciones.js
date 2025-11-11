@@ -33,23 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Consulta perfil en tabla usuarios
-    const { data: perfil, error: errorPerfil } = await supabase
-      .from('usuarios')
-      .select('*')
-      .eq('id', data.user.id)
-      .single();
-
-    if (errorPerfil || !perfil) {
-      mensaje.classList.add("error");
-      mensaje.textContent = "No se encontró el perfil del usuario";
-      return;
-    }
-
     mensaje.classList.add("exito");
     mensaje.textContent = "Inicio de sesión exitoso";
 
-    sessionStorage.setItem("usuarioActivo", perfil.nombre || correo);
+    sessionStorage.setItem("usuarioActivo", correo);
     sessionStorage.setItem("mostrarBienvenida", "true");
 
     setTimeout(() => {
