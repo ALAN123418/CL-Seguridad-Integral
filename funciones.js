@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
-  if (!form || !mensaje) return; // Evita errores si no existen
+  if (!form || !mensaje) return;
 
-  form.reset(); // Limpia campos al cargar
+  form.reset();
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
