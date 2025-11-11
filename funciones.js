@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje");
 
+  if (!form || !mensaje) return; // Evita errores si no existen
+
   form.reset(); // Limpia campos al cargar
 
   form.addEventListener("submit", async function (event) {
@@ -21,27 +23,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mensaje.classList.remove("exito", "error");
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: correo,
-      password: clave,
-    });
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: correo,
+        password: clave,
+      });
 
-    if (error) {
+      if (error) {
+        mensaje.classList.add("error");
+        mensaje.textContent = "Usuario o contraseña incorrectos";
+        form.reset();
+        return;
+      }
+
+      mensaje.classList.add("exito");
+      mensaje.textContent = "Inicio de sesión exitoso";
+
+      sessionStorage.setItem("usuarioActivo", correo);
+      sessionStorage.setItem("mostrarBienvenida", "true");
+
+      setTimeout(() => {
+        window.location.href = "pagina principal.html";
+      }, 1500);
+    } catch (err) {
+      console.error("Error inesperado:", err);
       mensaje.classList.add("error");
-      mensaje.textContent = "Usuario o contraseña incorrectos";
-      form.reset();
-      return;
+      mensaje.textContent = "Ocurrió un error al iniciar sesión";
     }
-
-    mensaje.classList.add("exito");
-    mensaje.textContent = "Inicio de sesión exitoso";
-
-    sessionStorage.setItem("usuarioActivo", correo);
-    sessionStorage.setItem("mostrarBienvenida", "true");
-
-    setTimeout(() => {
-      window.location.href = "pagina principal.html";
-    }, 1500);
   });
 
   // ========== LIMPIEZA AL VOLVER ==========
