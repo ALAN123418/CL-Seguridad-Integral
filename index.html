@@ -18,22 +18,22 @@
     <div class="contenedor-principal">
     <div class="contenedor-formulario">
       <h2>Iniciar sesión</h2>
-      <form id="nombre-usuario">
-        <div class="usuario">
-          <label for="usuario">Usuario:</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
-        </div>
-        <div class="contraseña">
-          <label for="contraseña">Contraseña:</label>
-          <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
-        </div>
-        <button type="submit" value="Iniciar">Entrar</button>
-        <div class="recordar">¿Has olvidado tu contraseña?</div>
-        <div class="registrar"> Quiero hacer el <a href="#">registro<a/>
-        </div>
-      </form>
+<form id="form-login">
+  <div class="usuario">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
+  </div>
+  <div class="contraseña">
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+  </div>
+  <button type="submit" value="Iniciar">Entrar</button>
+  <div class="recordar">¿Has olvidado tu contraseña?</div>
+  <div class="registrar"> Quiero hacer el <a href="#">registro</a></div>
+</form>
 
-      <p id="mensaje"></p>
+<p id="mensaje"></p>
+
     </div>
 
     <footer class="footer">
@@ -42,9 +42,11 @@
   </div>
 
   <div id="reloj" class="reloj"></div>
-  <script type="module" src="funciones.js"></script>
-body>
+<!-- Al final del body -->
+<script type="module" src="funciones.js"></script>
+</body>
 </html>
+
 
 
 
