@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ========== RELOJ FUNCIONAL ==========
+ // ========== RELOJ FUNCIONAL ==========
   function actualizarReloj() {
     const reloj = document.getElementById('reloj');
     if (!reloj) return;
