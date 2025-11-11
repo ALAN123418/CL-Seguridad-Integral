@@ -53,4 +53,38 @@ document.addEventListener("DOMContentLoaded", () => {
     sessionStorage.setItem("mostrarBienvenida", "true");
 
     setTimeout(() => {
-      window
+      window.location.href = "pagina principal.html";
+    }, 1500);
+  });
+
+  // ========== LIMPIEZA AL VOLVER ==========
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.navigation.type === 2) {
+      form.reset();
+      mensaje.textContent = "";
+      mensaje.classList.remove("exito", "error");
+    }
+  });
+
+  // ========== RELOJ FUNCIONAL ==========
+  function actualizarReloj() {
+    const reloj = document.getElementById('reloj');
+    if (!reloj) return;
+
+    const ahora = new Date();
+    const opciones = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    };
+
+    const formato = ahora.toLocaleString('es-MX', opciones);
+    reloj.textContent = `${formato}`;
+  }
+
+  actualizarReloj();
+  setInterval(actualizarReloj, 1000);
+});
